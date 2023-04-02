@@ -7,13 +7,24 @@ require('copilot').setup({
 		keymap = {
 			jump_prev = "[[",
 			jump_next = "]]",
-			accept = "<CR>",
+			accept = "<CR>",		
 			refresh = "gr",
-			open = "<M-CR>"
+			open = "<C-a>"	
 		},
 		layout = {
 			position = "right", -- | top | left | right
 			ratio = 0.4
+		},
+	},
+	suggestion = {
+		enabled = true,
+		auto_trigger = true,
+		-- debounce = 75,
+		keymap = {
+			accept = "<S-Tab>",
+			next = "<M-B>",
+			prev = "<C-B>",
+			dismiss = "<C-Tab>",
 		},
 	},
 	filetypes = {
@@ -30,6 +41,6 @@ require('copilot').setup({
 	copilot_node_command = 'node', -- Node.js version must be > 16.x
 	server_opts_overrides = {},
 })
-
-
-
+vim.cmd(":Copilot suggestion")
+vim.api.nvim_set_hl(0, "CopilotSuggestion", {foreground = "#bac2de", background = "NONE"}) 
+vim.api.nvim_set_hl(0, "CopilotAnnotation", {foreground = "#89b4fa", background = "NONE"})

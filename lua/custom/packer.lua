@@ -1,12 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require( 'packer' ).startup(function(use)
+	use { 'wbthomason/packer.nvim' }
+
 	use { "tpope/vim-commentary" }
 
 	use {
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
+	  "zbirenbaum/copilot.lua",
+	  as = "copilot",
 	}
 
 	use { "lewis6991/gitsigns.nvim" }
@@ -20,8 +21,6 @@ return require( 'packer' ).startup(function(use)
 	    vim.o.timeoutlen = 300
 	  end
 	}
-
-	use 'wbthomason/packer.nvim'
 
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',

@@ -1,1 +1,1 @@
-vim.keymap.set("n",  "<leader>gt", vim.cmd.Git);
+vim.keymap.set("n",  "<leader>fg", vim.cmd.Git);
