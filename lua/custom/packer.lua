@@ -1,7 +1,13 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require( 'packer' ).startup(function(use)
-	use { "zbirenbaum/copilot.lua" }
+	use { "tpope/vim-commentary" }
+
+	use {
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+	}
 
 	use { "lewis6991/gitsigns.nvim" }
 

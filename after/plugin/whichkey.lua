@@ -23,5 +23,4 @@ wk.register({
 	F = "Search for text in project"
     },
 
-}, { prefix = "<leader>" })
-
+}, { prefix = "<leader>",  mode="n" })
