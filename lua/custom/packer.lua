@@ -9,6 +9,8 @@ return require( 'packer' ).startup(function(use)
 
 	use { "windwp/nvim-ts-autotag" }
 
+	use { "voldikss/vim-floaterm" }
+
 	use({
 		"folke/noice.nvim",
 		requires = {
@@ -16,6 +18,15 @@ return require( 'packer' ).startup(function(use)
 			"rcarriga/nvim-notify",
 		}
 	})
+
+	use {
+		'rmagatti/auto-session',
+		config = function()
+			require("auto-session").setup {
+				log_level = "error",
+			}
+		end
+	}
 
 	use { "tpope/vim-surround" }
 

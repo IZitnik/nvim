@@ -39,6 +39,7 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
+keymap("n", "<leader>Ps", ":PackerSync<CR>")
 
 -- LSP keymaps
 keymap("n", "<leader>lsd", ":lua vim.lsp.buf.definition()<CR>")
@@ -49,3 +50,13 @@ keymap("n", "<leader>li", ":lua vim.lsp.buf.hover()<CR>")
 
 -- Trouble keymaps
 keymap("n", "<leader>lt", ":TroubleToggle<CR>")
+
+-- Floaterm keymaps
+keymap("n", "<leader>tt", ":FloatermToggle<CR>")
+keymap("n", "<leader>tp", ":FloatermNew python<CR>")
+keymap("n", "<leader>tn", ":FloatermNew<CR>")
+keymap("n", "<leader>tl", ":FloatermNext<CR>")
+keymap("n", "<leader>th", ":FloatermPrev<CR>")
+keymap("n", "<leader>tx", ":FloatermKill<CR>")
+keymap("t", "<Esc>", "<C-\\><C-n>")
+keymap("t", "<C-n>", "<C-\\><C-n>:FloatermToggle<CR>")

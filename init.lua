@@ -18,3 +18,24 @@ set.hlsearch = true
 set.mouse = "a"
 set.showmatch = true
 set.autoindent = true
+set.scrolloff = 5
+set.sidescrolloff = 10
+
+vim.opt.wildmenu = true
+vim.opt.wildignore = vim.opt.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }
+
+
+if os.getenv("WSLENV") then
+  vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+      ["*"] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace(\"`r\", \"\"))",
+    },
+    cache_enabled = 0,
+  }
+end
