@@ -5,6 +5,13 @@ return require( 'packer' ).startup(function(use)
 
 	use { "tpope/vim-commentary" }
 
+	use { "tpope/vim-surround" }
+
+	use {
+		"folke/trouble.nvim",
+		requires = { "nvim-tree/nvim-web-devicons" }
+	}
+
 	use {
 	  "zbirenbaum/copilot.lua",
 	  as = "copilot",

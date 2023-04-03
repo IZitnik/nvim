@@ -7,9 +7,9 @@ require('copilot').setup({
 		keymap = {
 			jump_prev = "[[",
 			jump_next = "]]",
-			accept = "<CR>",		
+			accept = "<CR>",
 			refresh = "gr",
-			open = "<C-a>"	
+			open = "<C-a>"
 		},
 		layout = {
 			position = "right", -- | top | left | right
@@ -42,5 +42,5 @@ require('copilot').setup({
 	server_opts_overrides = {},
 })
 vim.cmd(":Copilot suggestion")
-vim.api.nvim_set_hl(0, "CopilotSuggestion", {foreground = "#bac2de", background = "NONE"}) 
+vim.api.nvim_set_hl(0, "CopilotSuggestion", {foreground = "#bac2de", background = "NONE"})
 vim.api.nvim_set_hl(0, "CopilotAnnotation", {foreground = "#89b4fa", background = "NONE"})
