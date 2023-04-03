@@ -11,6 +11,12 @@ return require( 'packer' ).startup(function(use)
 
 	use { "voldikss/vim-floaterm" }
 
+	use { "NvChad/nvim-colorizer.lua" }
+
+	use {
+		"folke/twilight.nvim",
+	}
+
 	use({
 		"folke/noice.nvim",
 		requires = {
