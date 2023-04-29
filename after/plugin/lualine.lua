@@ -1,3 +1,7 @@
+local git_blame = require('gitblame')
+
+git_blame.is_blame_text_available() -- Returns a boolean value indicating whether blame message is available
+git_blame.get_current_blame_text() --  Returns a string with blame message
 
 require('lualine').setup {
   options = {
@@ -20,7 +24,7 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {'branch', {git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available}, 'diff', 'diagnostics'},
     lualine_c = {'filename'},
     lualine_x = {'encoding'},
     lualine_y = {'filetype'},

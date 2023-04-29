@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+
 local keymap = vim.keymap.set
 
 -- File bindings
@@ -20,6 +21,7 @@ keymap("n", "gx", ":bdelete<cr>  ")
 keymap("n", "<leader>bb", ":bnext<cr>")
 keymap("n", "<leader>b<C-b>", ":bprevious<cr>")
 keymap("n", "<leader>bd", ":bdelete<cr>")
+keymap("n", "<leader>bD", ":bdelete!<cr>")
 
 -- INSERT mode movement with ctrl
 keymap("i", "<C-h>", "<Esc>ha")
@@ -39,7 +41,7 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
-keymap("n", "<leader>Ps", ":PackerSync<CR>")
+keymap("n", "q" , vim.NIL)
 
 -- LSP keymaps
 keymap("n", "<leader>lsd", ":lua vim.lsp.buf.definition()<CR>")
@@ -60,3 +62,8 @@ keymap("n", "<leader>th", ":FloatermPrev<CR>")
 keymap("n", "<leader>tx", ":FloatermKill<CR>")
 keymap("t", "<Esc>", "<C-\\><C-n>")
 keymap("t", "<C-n>", "<C-\\><C-n>:FloatermToggle<CR>")
+
+-- GitBlame
+keymap("n", "<leader>pgbi", function()
+	vim.g.gitblame_display_virtual_text = vim.g.gitblame_display_virtual_text == 1 and 0 or 1
+end)
