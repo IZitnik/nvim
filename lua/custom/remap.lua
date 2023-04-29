@@ -41,7 +41,8 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
-keymap("n", "q" , vim.NIL)
+keymap("n", "q" , "<Nop>")
+-- keymap("n", "q:", "<Nop>")
 
 -- LSP keymaps
 keymap("n", "<leader>lsd", ":lua vim.lsp.buf.definition()<CR>")
