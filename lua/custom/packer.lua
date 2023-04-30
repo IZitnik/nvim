@@ -3,9 +3,21 @@ vim.cmd [[packadd packer.nvim]]
 return require( 'packer' ).startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
+	use { 'f-person/git-blame.nvim' }
+
 	use { "tpope/vim-commentary" }
 
 	use { "rcarriga/nvim-notify" }
+
+	use {
+		'nvim-pack/nvim-spectre',
+		require = {
+			'nvim-lua/plenary.nvim',
+			'nvim-tree/nvim-web-devicons'
+		}
+	}
+
+	use { "m4xshen/smartcolumn.nvim" }
 
 	use { "windwp/nvim-ts-autotag" }
 

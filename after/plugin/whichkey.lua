@@ -6,6 +6,7 @@ wk.register({
         w = "write file",
 	q = "quit file",
 	s = "source file",
+	r = "replace in file",
 	["1"] = "which_key_ignore",  -- special label to hide it in the popup
     },
     u = "Undo tree",
@@ -18,7 +19,18 @@ wk.register({
     p = {
 	name = "Project",
 	v = "Open tree view",
-	g = "git panel",
+	r = "replace in project",
+	g = {
+	    name = "Git",
+	    p = "git panel",
+	    b = {
+		name = "Git blame",
+		i = "inline blame",
+		a = "toggle author",
+		c = "toggle commit",
+		d = "toggle date"
+	    },
+	},
 	f = "Fuzzy find in project",
 	F = "Search for text in project"
     },
