@@ -9,6 +9,8 @@ return require( 'packer' ).startup(function(use)
 
 	use { "rcarriga/nvim-notify" }
 
+	use { "https://github.com/seandewar/nvimesweeper" }
+
 	use {
 		'nvim-pack/nvim-spectre',
 		require = {
