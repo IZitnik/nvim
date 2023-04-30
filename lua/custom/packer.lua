@@ -19,6 +19,14 @@ return require( 'packer' ).startup(function(use)
 		}
 	}
 
+	use {
+		'justinhj/battery.nvim',
+		requires = {
+			-- 'kyazdani42/nvim-web-devicons',
+			'nvim-lua/plenary.nvim'
+		}
+	}
+
 	use { "m4xshen/smartcolumn.nvim" }
 
 	use { "windwp/nvim-ts-autotag" }

@@ -1,7 +1,8 @@
 local git_blame = require('gitblame')
 
-git_blame.is_blame_text_available() -- Returns a boolean value indicating whether blame message is available
-git_blame.get_current_blame_text() --  Returns a string with blame message
+local function known_battery()
+  return '' ~= require('battery').get_status_line()
+end
 
 require('lualine').setup {
   options = {
@@ -23,12 +24,12 @@ require('lualine').setup {
     }
   },
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = {{'mode', fmt = function(str) return str:sub(1,1) end, separator={right=""}, color = {bg = '#313244', fg = '#fff', gui = 'bold'}}, 'hostname'},
     lualine_b = {'branch', {git_blame.get_current_blame_text, cond = git_blame.is_blame_text_available}, 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_x = {'encoding'},
-    lualine_y = {'filetype'},
-    lualine_z = {'location'}
+    lualine_x = {{'encoding', color = {bg = '#585b70'}, separator={left = ''}}},
+    lualine_y = {'filetype', 'location'},
+    lualine_z = {{require('battery').get_status_line, color = {fg = '#a6e3a1', bg='#313244', gui = 'bold'}, cond = known_battery}} -- empty => ''
   },
   inactive_sections = {
     lualine_a = {},
