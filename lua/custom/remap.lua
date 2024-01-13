@@ -2,6 +2,10 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap.set
 
+-- Faster movement around file
+keymap("n", "J", "5j")
+keymap("n", "K", "5k")
+
 -- File bindings
 keymap("n", "<leader>fw", vim.cmd.w)
 keymap("n", "<leader>fs", vim.cmd.so)
@@ -14,10 +18,6 @@ keymap("i", "<C-u>", "<C-o>u")
 keymap("i", "<C-z>", "<C-o><C-r>")
 
 -- Buffer movement keymaps
-keymap("n", "gn", ":bnext<cr>")
-keymap("n", "gp", ":bprevious<cr>")
-keymap("n", "gx", ":bdelete<cr>  ")
-
 keymap("n", "<leader>bb", ":bnext<cr>")
 keymap("n", "<leader>b<C-b>", ":bprevious<cr>")
 keymap("n", "<leader>bd", ":bdelete<cr>")
@@ -41,7 +41,6 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
-keymap("n", "q" , "<Nop>")
 -- keymap("n", "q:", "<Nop>")
 
 -- LSP keymaps
