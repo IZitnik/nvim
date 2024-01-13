@@ -1,9 +1,5 @@
 local git_blame = require('gitblame')
 
-local function known_battery()
-  return '' ~= require('battery').get_status_line()
-end
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -29,7 +25,7 @@ require('lualine').setup {
     lualine_c = {'filename'},
     lualine_x = {{'encoding', color = {bg = '#585b70'}, separator={left = ''}}},
     lualine_y = {'filetype', 'location'},
-    lualine_z = {{require('battery').get_status_line, color = {fg = '#a6e3a1', bg='#313244', gui = 'bold'}, cond = known_battery}} -- empty => ''
+    lualine_z = {} -- empty => ''
   },
   inactive_sections = {
     lualine_a = {},

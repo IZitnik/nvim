@@ -19,15 +19,15 @@ require("custom.packer");
 require("custom.remap");
 
 local set = vim.opt
-vim.cmd("set number relativenumber")
-vim.cmd("set cursorline")
 
+set.relativenumber = true
+set.cursorline = true
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
 set.smartindent = true
-
+set.colorcolumn = "60"
 set.wrap = false
 set.cursorline = true
 set.incsearch = true
@@ -37,6 +37,7 @@ set.showmatch = true
 set.autoindent = true
 set.scrolloff = 5
 set.sidescrolloff = 10
+set.shada = NONE
 
 vim.opt.wildmenu = true
 vim.opt.wildignore = vim.opt.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }

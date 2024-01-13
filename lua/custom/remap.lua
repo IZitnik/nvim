@@ -2,6 +2,14 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap.set
 
+-- Faster movements
+keymap("n", "J", "5j")
+keymap("n", "K", "5k")
+keymap("n", "j", ":norm! gj<CR>")
+keymap("n", "gj", ":norm! j<CR>")
+keymap("n", "k", ":norm! gk<CR>")
+keymap("n", "gk", ":norm! k<CR>")
+
 -- File bindings
 keymap("n", "<leader>fw", vim.cmd.w)
 keymap("n", "<leader>fs", vim.cmd.so)
@@ -14,10 +22,6 @@ keymap("i", "<C-u>", "<C-o>u")
 keymap("i", "<C-z>", "<C-o><C-r>")
 
 -- Buffer movement keymaps
-keymap("n", "gn", ":bnext<cr>")
-keymap("n", "gp", ":bprevious<cr>")
-keymap("n", "gx", ":bdelete<cr>  ")
-
 keymap("n", "<leader>bb", ":bnext<cr>")
 keymap("n", "<leader>b<C-b>", ":bprevious<cr>")
 keymap("n", "<leader>bd", ":bdelete<cr>")
@@ -41,28 +45,12 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
-keymap("n", "q" , "<Nop>")
--- keymap("n", "q:", "<Nop>")
-
--- LSP keymaps
-keymap("n", "<leader>lsd", ":lua vim.lsp.buf.definition()<CR>")
-keymap("n", "<leader>lsf", ":lua vim.lsp.buf.references()<CR>")
-keymap("n", "<leader>lsr", ":lua vim.lsp.buf.rename()<CR>")
-
-keymap("n", "<leader>li", ":lua vim.lsp.buf.hover()<CR>")
 
 -- Trouble keymaps
 keymap("n", "<leader>lt", ":TroubleToggle<CR>")
 
--- Floaterm keymaps
-keymap("n", "<leader>tt", ":FloatermToggle<CR>")
-keymap("n", "<leader>tp", ":FloatermNew python<CR>")
-keymap("n", "<leader>tn", ":FloatermNew<CR>")
-keymap("n", "<leader>tl", ":FloatermNext<CR>")
-keymap("n", "<leader>th", ":FloatermPrev<CR>")
-keymap("n", "<leader>tx", ":FloatermKill<CR>")
+-- Term keymaps
 keymap("t", "<Esc>", "<C-\\><C-n>")
-keymap("t", "<C-n>", "<C-\\><C-n>:FloatermToggle<CR>")
 
 -- GitBlame
 keymap("n", "<leader>pgbi", function()

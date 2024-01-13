@@ -7,62 +7,13 @@ return require( 'packer' ).startup(function(use)
 
 	use { "tpope/vim-commentary" }
 
-	use { "rcarriga/nvim-notify" }
-
-	use { "https://github.com/seandewar/nvimesweeper" }
-
-	use {
-		'nvim-pack/nvim-spectre',
-		require = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons'
-		}
-	}
-
-	use {
-		'justinhj/battery.nvim',
-		requires = {
-			-- 'kyazdani42/nvim-web-devicons',
-			'nvim-lua/plenary.nvim'
-		}
-	}
-
-	use { "m4xshen/smartcolumn.nvim" }
-
 	use { "windwp/nvim-ts-autotag" }
-
-	use { "voldikss/vim-floaterm" }
 
 	use { "NvChad/nvim-colorizer.lua" }
 
-	use {
-		"folke/twilight.nvim",
-	}
-
-	use({
-		"folke/noice.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		}
-	})
-
-	use {
-		'rmagatti/auto-session',
-		config = function()
-			require("auto-session").setup {
-				log_level = "error",
-			}
-		end
-	}
-
 	use { "tpope/vim-surround" }
 
-	use {
-		"folke/trouble.nvim",
-		requires = { "nvim-tree/nvim-web-devicons" }
-	}
-
+  -- ANCHOR
 	use {
 	  "zbirenbaum/copilot.lua",
 	  as = "copilot",
@@ -80,9 +31,9 @@ return require( 'packer' ).startup(function(use)
 	  end
 	}
 
+  -- FIXME: Doesn't work rn
 	use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	-- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
@@ -96,45 +47,13 @@ return require( 'packer' ).startup(function(use)
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
-	use { 'mbbill/undotree' }
-
 	use { 'tpope/vim-fugitive' }
-
-	use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-	    -- LSP Support
-	    {'neovim/nvim-lspconfig'},             -- Required
-	    {'williamboman/mason.nvim'},           -- Optional
-	    {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-	    -- Autocompletion
-	    {'hrsh7th/nvim-cmp'},         -- Required
-	    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-	    {'hrsh7th/cmp-buffer'},       -- Optional
-	    {'hrsh7th/cmp-path'},         -- Optional
-	    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-	    {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-	    -- Snippets
-	    {'L3MON4D3/LuaSnip'},             -- Required
-	    {'rafamadriz/friendly-snippets'}, -- Optional
-	  }
-	}
 
 	use {
 	  'nvim-tree/nvim-tree.lua',
 	  requires = {
-	    'nvim-tree/nvim-web-devicons', -- optional
+	    'nvim-tree/nvim-web-devicons',
 	  },
-	}
-
-	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-
-	use {
-	    'glacambre/firenvim',
-	    run = function() vim.fn['firenvim#install'](0) end
 	}
 end)
 
