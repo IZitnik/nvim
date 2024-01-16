@@ -7,9 +7,7 @@ return require( 'packer' ).startup(function(use)
 
 	use { "tpope/vim-commentary" }
 
-	use { "rcarriga/nvim-notify" }
-
-	use { "https://github.com/seandewar/nvimesweeper" }
+	-- use { "rcarriga/nvim-notify" }
 
 	use {
 		'nvim-pack/nvim-spectre',
@@ -27,10 +25,6 @@ return require( 'packer' ).startup(function(use)
 		}
 	}
 
-	use { "m4xshen/smartcolumn.nvim" }
-
-	use { "windwp/nvim-ts-autotag" }
-
 	use { "voldikss/vim-floaterm" }
 
 	use { "NvChad/nvim-colorizer.lua" }
@@ -39,22 +33,13 @@ return require( 'packer' ).startup(function(use)
 		"folke/twilight.nvim",
 	}
 
-	use({
-		"folke/noice.nvim",
-		requires = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		}
-	})
-
-	use {
-		'rmagatti/auto-session',
-		config = function()
-			require("auto-session").setup {
-				log_level = "error",
-			}
-		end
-	}
+	-- use({
+	-- 	"folke/noice.nvim",
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	}
+	-- })
 
 	use { "tpope/vim-surround" }
 
@@ -81,7 +66,7 @@ return require( 'packer' ).startup(function(use)
 	}
 
 	use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
+	  'nvim-telescope/telescope.nvim', 
 	-- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
@@ -95,8 +80,6 @@ return require( 'packer' ).startup(function(use)
 	  as = 'lualine',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
-
-	use { 'mbbill/undotree' }
 
 	use { 'tpope/vim-fugitive' }
 
@@ -134,7 +117,10 @@ return require( 'packer' ).startup(function(use)
 
 	use {
 	    'glacambre/firenvim',
-	    run = function() vim.fn['firenvim#install'](0) end
+	    run = function() 
+				vim.g.firenvim_config.localSettings['.*'] = { takeover = 'never' }
+				vim.fn['firenvim#install'](0)
+			end
 	}
 end)
 

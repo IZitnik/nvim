@@ -3,13 +3,12 @@ local wk = require("which-key")
 wk.register({
     f = {
 	name = "File", -- optional group name
-        w = "write file",
+	w = "write file",
 	q = "quit file",
 	s = "source file",
 	r = "replace in file",
 	["1"] = "which_key_ignore",  -- special label to hide it in the popup
     },
-    u = "Undo tree",
     b = {
 	name = "Buffer",
 	b = "Next buffer",
