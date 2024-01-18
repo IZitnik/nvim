@@ -116,11 +116,8 @@ return require( 'packer' ).startup(function(use)
 	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
 	use {
-	    'glacambre/firenvim',
-	    run = function() 
-				vim.g.firenvim_config.localSettings['.*'] = { takeover = 'never' }
-				vim.fn['firenvim#install'](0)
-			end
+		'glacambre/firenvim',
+		run = function() vim.fn['firenvim#install'](0) end
 	}
 end)
 
