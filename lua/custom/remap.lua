@@ -46,9 +46,6 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 -- Miscellanous customs
 keymap("n", "Y", "y$")
 
--- Trouble keymaps
-keymap("n", "<leader>lt", ":TroubleToggle<CR>")
-
 -- Term keymaps
 keymap("t", "<Esc>", "<C-\\><C-n>")
 

@@ -13,7 +13,6 @@ return require( 'packer' ).startup(function(use)
 
 	use { "tpope/vim-surround" }
 
-  -- ANCHOR
 	use {
 	  "zbirenbaum/copilot.lua",
 	  as = "copilot",
@@ -31,7 +30,6 @@ return require( 'packer' ).startup(function(use)
 	  end
 	}
 
-  -- FIXME: Doesn't work rn
 	use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
 	  requires = { {'nvim-lua/plenary.nvim'} }
@@ -54,6 +52,13 @@ return require( 'packer' ).startup(function(use)
 	  requires = {
 	    'nvim-tree/nvim-web-devicons',
 	  },
+	}
+	use {
+	  'tmhedberg/SimpylFold',
+	  requires = {
+	    'Konfekt/FastFold',
+	  },
+	  as = 'simpylfold',
 	}
 end)
 
