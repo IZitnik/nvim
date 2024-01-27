@@ -60,6 +60,8 @@ return require( 'packer' ).startup(function(use)
 	  },
 	  as = 'simpylfold',
 	}
+
+	use { 'mattn/emmet-vim' }
 end)
 
 
