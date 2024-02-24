@@ -48,12 +48,6 @@ return require( 'packer' ).startup(function(use)
 	use { 'tpope/vim-fugitive' }
 
 	use {
-	  'nvim-tree/nvim-tree.lua',
-	  requires = {
-	    'nvim-tree/nvim-web-devicons',
-	  },
-	}
-	use {
 	  'tmhedberg/SimpylFold',
 	  requires = {
 	    'Konfekt/FastFold',
@@ -62,6 +56,10 @@ return require( 'packer' ).startup(function(use)
 	}
 
 	use { 'mattn/emmet-vim' }
+
+	use { 'ggandor/leap.nvim' }
+
+	use { 'stevearc/oil.nvim' }
 end)
 
 
