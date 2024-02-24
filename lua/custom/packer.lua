@@ -120,7 +120,19 @@ return require( 'packer' ).startup(function(use)
 		run = function() vim.fn['firenvim#install'](0) end
 	}
 
-	use {'mattn/emmet-vim'}
+	use {
+	  'tmhedberg/SimpylFold',
+	  requires = {
+	    'Konfekt/FastFold',
+	  },
+	  as = 'simpylfold',
+	}
+
+	use { 'mattn/emmet-vim' }
+
+	use { 'ggandor/leap.nvim' }
+
+	use { 'stevearc/oil.nvim' }
 end)
 
 
