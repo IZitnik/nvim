@@ -1,15 +1,15 @@
 -- Ensures packer is installed
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
   return false
 end
-local packer_bootstrap = ensure_packer()                   
+local packer_bootstrap = ensure_packer()
 if packer_bootstrap then
   vim.cmd [[PackerSync]]
 end
@@ -37,8 +37,8 @@ set.showmatch = true
 set.autoindent = true
 set.scrolloff = 5
 set.sidescrolloff = 10
-set.shada = NONE
-set.shadafile = NONE
+set.shada = nil
+set.shadafile = nil
 
 vim.opt.wildmenu = true
 vim.opt.wildignore = vim.opt.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }
@@ -58,3 +58,8 @@ if os.getenv("WSLENV") then
     cache_enabled = 0,
   }
 end
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})

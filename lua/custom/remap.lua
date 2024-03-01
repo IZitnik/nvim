@@ -67,3 +67,7 @@ keymap("t", "<C-n>", "<C-\\><C-n>:FloatermToggle<CR>")
 keymap("n", "<leader>pgbi", function()
 	vim.g.gitblame_display_virtual_text = vim.g.gitblame_display_virtual_text == 1 and 0 or 1
 end)
+
+-- Surround keymaps
+keymap("i", "<C-g>s", "<Plug>Isurround")
+keymap("i", "<C-g>S", "<Plug>ISurround")

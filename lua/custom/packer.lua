@@ -1,6 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require( 'packer' ).startup(function(use)
+return require('packer').startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	use { 'f-person/git-blame.nvim' }
@@ -49,8 +49,8 @@ return require( 'packer' ).startup(function(use)
 	}
 
 	use {
-	  "zbirenbaum/copilot.lua",
-	  as = "copilot",
+		"zbirenbaum/copilot.lua",
+		as = "copilot",
 	}
 
 	use { "lewis6991/gitsigns.nvim" }
@@ -58,62 +58,59 @@ return require( 'packer' ).startup(function(use)
 	use 'tpope/vim-sleuth'
 
 	use {
-	  "folke/which-key.nvim",
-	  config = function()
-	    vim.o.timeout = true
-	    vim.o.timeoutlen = 300
-	  end
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end
 	}
 
 	use {
-	  'nvim-telescope/telescope.nvim', 
-	-- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim',
+		-- or                            , branch = '0.1.x',
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
 
 	use { "catppuccin/nvim", as = "catppuccin" }
 
-	use { 'nvim-treesitter/nvim-treesitter', as = "treesitter", {run = ':TSUpdate'}}
+	use { 'nvim-treesitter/nvim-treesitter', as = "treesitter", { run = ':TSUpdate' } }
 
 	use {
-	 'nvim-lualine/lualine.nvim',
-	  as = 'lualine',
-	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+		'nvim-lualine/lualine.nvim',
+		as = 'lualine',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
 
 	use { 'tpope/vim-fugitive' }
 
 	use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-	    -- LSP Support
-	    {'neovim/nvim-lspconfig'},             -- Required
-	    {'williamboman/mason.nvim'},           -- Optional
-	    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v3.x',
+		requires = {
+			--- Uncomment the two plugins below if you want to manage the language servers from neovim
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
 
-	    -- Autocompletion
-	    {'hrsh7th/nvim-cmp'},         -- Required
-	    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-	    {'hrsh7th/cmp-buffer'},       -- Optional
-	    {'hrsh7th/cmp-path'},         -- Optional
-	    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-	    {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-	    -- Snippets
-	    {'L3MON4D3/LuaSnip'},             -- Required
-	    {'rafamadriz/friendly-snippets'}, -- Optional
-	  }
+			-- LSP Support
+			{ 'neovim/nvim-lspconfig' },
+			-- Autocompletion
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+		}
 	}
 
 	use {
-	  'nvim-tree/nvim-tree.lua',
-	  requires = {
-	    'nvim-tree/nvim-web-devicons', -- optional
-	  },
+		'nvim-tree/nvim-tree.lua',
+		requires = {
+			'nvim-tree/nvim-web-devicons', -- optional
+		},
 	}
 
-	use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+	use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
 
 	use {
 		'glacambre/firenvim',
@@ -121,11 +118,11 @@ return require( 'packer' ).startup(function(use)
 	}
 
 	use {
-	  'tmhedberg/SimpylFold',
-	  requires = {
-	    'Konfekt/FastFold',
-	  },
-	  as = 'simpylfold',
+		'tmhedberg/SimpylFold',
+		requires = {
+			'Konfekt/FastFold',
+		},
+		as = 'simpylfold',
 	}
 
 	use { 'mattn/emmet-vim' }
@@ -133,7 +130,6 @@ return require( 'packer' ).startup(function(use)
 	use { 'ggandor/leap.nvim' }
 
 	use { 'stevearc/oil.nvim' }
+
+	use { 'tpope/vim-repeat' }
 end)
-
-
-
