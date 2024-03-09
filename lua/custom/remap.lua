@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap.set
 
 -- Faster movement around file
@@ -41,13 +40,11 @@ keymap("n", "<A-k>", ":m -2<Enter>")
 
 -- Miscellanous customs
 keymap("n", "Y", "y$")
--- keymap("n", "q:", "<Nop>")
 
 -- LSP keymaps
 keymap("n", "<leader>lsd", ":lua vim.lsp.buf.definition()<CR>")
 keymap("n", "<leader>lsf", ":lua vim.lsp.buf.references()<CR>")
 keymap("n", "<leader>lsr", ":lua vim.lsp.buf.rename()<CR>")
-
 keymap("n", "<leader>li", ":lua vim.lsp.buf.hover()<CR>")
 
 -- Trouble keymaps
@@ -67,7 +64,3 @@ keymap("t", "<C-n>", "<C-\\><C-n>:FloatermToggle<CR>")
 keymap("n", "<leader>pgbi", function()
 	vim.g.gitblame_display_virtual_text = vim.g.gitblame_display_virtual_text == 1 and 0 or 1
 end)
-
--- Surround keymaps
-keymap("i", "<C-g>s", "<Plug>Isurround")
-keymap("i", "<C-g>S", "<Plug>ISurround")

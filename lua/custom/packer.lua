@@ -33,15 +33,12 @@ return require('packer').startup(function(use)
 		"folke/twilight.nvim",
 	}
 
-	-- use({
-	-- 	"folke/noice.nvim",
-	-- 	requires = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"rcarriga/nvim-notify",
-	-- 	}
-	-- })
-
-	use { "tpope/vim-surround" }
+	use {
+		"tpope/vim-surround",
+		after = {
+			'ggandor/leap.nvim'
+		},
+	}
 
 	use {
 		"folke/trouble.nvim",
@@ -127,7 +124,12 @@ return require('packer').startup(function(use)
 
 	use { 'mattn/emmet-vim' }
 
-	use { 'ggandor/leap.nvim' }
+	use {
+		'ggandor/leap.nvim',
+		config = function()
+			require('leap').create_default_mappings()
+		end
+	}
 
 	use { 'stevearc/oil.nvim' }
 
