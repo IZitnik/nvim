@@ -20,32 +20,36 @@ require("custom.remap");
 
 local set = vim.opt
 
-set.cursorline = true
-set.relativenumber = true
+-- Indentation and tabs settings
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
 set.expandtab = true
 set.smartindent = true
+set.autoindent = true
 
-set.wrap = false
+-- Cursor and search settings
 set.cursorline = true
+set.relativenumber = true
 set.incsearch = true
 set.hlsearch = true
-set.mouse = "a"
 set.showmatch = true
-set.autoindent = true
+
+-- Scroll settings
+set.wrap = false
 set.scrolloff = 5
 set.sidescrolloff = 10
+
+-- Other settings
+set.mouse = "a"
 set.shada = nil
 set.shadafile = nil
+set.wildmenu = true
+set.wildignore = set.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }
 
-vim.opt.wildmenu = true
-vim.opt.wildignore = vim.opt.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }
-
-
+-- WSL Clipboard fix
 if os.getenv("WSLENV") then
-  vim.g.clipboard = {
+  set.clipboard = {
     name = "WslClipboard",
     copy = {
       ["+"] = "clip.exe",
@@ -59,6 +63,7 @@ if os.getenv("WSLENV") then
   }
 end
 
+-- Remove trailing whitespaces on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
