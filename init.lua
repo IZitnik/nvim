@@ -19,9 +19,9 @@ require("custom.packer");
 require("custom.remap");
 
 local set = vim.opt
-vim.cmd("set number relativenumber")
-vim.cmd("set cursorline")
 
+set.cursorline = true
+set.relativenumber = true
 set.tabstop = 2
 set.softtabstop = 2
 set.shiftwidth = 2
