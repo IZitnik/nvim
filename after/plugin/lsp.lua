@@ -14,8 +14,17 @@ require('mason-lspconfig').setup({
   },
   handlers = {
     lsp_zero.default_setup,
+    intelephense = function()
+      require('lspconfig').intelephense.setup({
+        cmd = { 'intelephense', '--stdio' },
+        filetypes = { 'php' },
+        root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', 'LICENSE.txt')
+        single_file_support = true,
+      })
+    end,
   },
 })
+
 
 local cmp = require('cmp')
 lsp_zero.cmp_action()
