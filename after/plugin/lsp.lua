@@ -18,8 +18,8 @@ require('mason-lspconfig').setup({
       require('lspconfig').intelephense.setup({
         cmd = { 'intelephense', '--stdio' },
         filetypes = { 'php' },
-        root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', 'LICENSE.txt')
         single_file_support = true,
+        root_dir = require('lspconfig.util').root_pattern('composer.json', '.git', 'LICENSE.txt')
       })
     end,
   },

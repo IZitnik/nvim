@@ -31,6 +31,7 @@ set.autoindent = true
 -- Cursor and search settings
 set.cursorline = true
 set.relativenumber = true
+set.number = true
 set.incsearch = true
 set.hlsearch = true
 set.showmatch = true
@@ -49,7 +50,7 @@ set.wildignore = set.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*'
 
 -- WSL Clipboard fix
 if os.getenv("WSLENV") then
-  set.clipboard = {
+  vim.g.clipboard = {
     name = "WslClipboard",
     copy = {
       ["+"] = "clip.exe",
