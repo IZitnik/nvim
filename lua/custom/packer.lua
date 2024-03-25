@@ -134,4 +134,6 @@ return require('packer').startup(function(use)
 	use { 'stevearc/oil.nvim' }
 
 	use { 'tpope/vim-repeat' }
+
+	use { 'ActivityWatch/aw-watcher-vim' }
 end)

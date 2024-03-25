@@ -31,6 +31,7 @@ set.autoindent = true
 -- Cursor and search settings
 set.cursorline = true
 set.relativenumber = true
+set.number = true
 set.incsearch = true
 set.hlsearch = true
 set.showmatch = true
