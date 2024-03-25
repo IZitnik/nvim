@@ -50,7 +50,7 @@ set.wildignore = set.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*'
 
 -- WSL Clipboard fix
 if os.getenv("WSLENV") then
-  set.clipboard = {
+  vim.g.clipboard = {
     name = "WslClipboard",
     copy = {
       ["+"] = "clip.exe",
