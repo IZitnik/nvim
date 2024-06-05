@@ -21,6 +21,7 @@ require("custom.remap");
 local set = vim.opt
 
 set.relativenumber = true
+set.number = true
 set.cursorline = true
 set.tabstop = 2
 set.softtabstop = 2
@@ -38,6 +39,7 @@ set.autoindent = true
 set.scrolloff = 5
 set.sidescrolloff = 10
 set.shada = NONE
+set.noexpandtab = true
 
 vim.opt.wildmenu = true
 vim.opt.wildignore = vim.opt.wildignore + { '*/node_modules/*', '*/.git/*', '*/.cache/*' }
