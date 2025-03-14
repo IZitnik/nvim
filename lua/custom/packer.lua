@@ -7,16 +7,6 @@ return require('packer').startup(function(use)
 
 	use { "tpope/vim-commentary" }
 
-	-- use { "rcarriga/nvim-notify" }
-
-	use {
-		'nvim-pack/nvim-spectre',
-		require = {
-			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons'
-		}
-	}
-
 	use {
 		'justinhj/battery.nvim',
 		requires = {
@@ -29,21 +19,7 @@ return require('packer').startup(function(use)
 
 	use { "NvChad/nvim-colorizer.lua" }
 
-	use {
-		"folke/twilight.nvim",
-	}
-
-	use {
-		"tpope/vim-surround",
-		after = {
-			'ggandor/leap.nvim'
-		},
-	}
-
-	use {
-		"folke/trouble.nvim",
-		requires = { "nvim-tree/nvim-web-devicons" }
-	}
+	use { "tpope/vim-surround" }
 
 	use {
 		"zbirenbaum/copilot.lua",
@@ -135,5 +111,25 @@ return require('packer').startup(function(use)
 
 	use { 'tpope/vim-repeat' }
 
-	use { 'ActivityWatch/aw-watcher-vim' }
+	use({
+		'MeanderingProgrammer/render-markdown.nvim',
+		after = { 'nvim-treesitter' },
+		-- requires = { 'echasnovski/mini.nvim', opt = true }, -- if you use the mini.nvim suite
+		-- requires = { 'echasnovski/mini.icons', opt = true }, -- if you use standalone mini plugins
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+	})
+
+	use({
+		'Julian/lean.nvim',
+		requires = {
+			'neovim/nvim-lspconfig',
+			'nvim-lua/plenary.nvim',
+		},
+	})
+
+	-- use { 'ActivityWatch/aw-watcher-vim' }
+
+	-- use { 'mfussenegger/nvim-dap' }
+
+	-- use { 'mfussenegger/nvim-dap-python' }
 end)
