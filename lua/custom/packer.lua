@@ -60,6 +60,13 @@ return require( 'packer' ).startup(function(use)
 	use { 'ggandor/leap.nvim' }
 
 	use { 'stevearc/oil.nvim' }
+
+	use {
+		'junnplus/lsp-setup.nvim',
+		requires = {
+			'neovim/nvim-lspconfig'
+		}
+	}
 end)
 
 
